@@ -1,0 +1,18 @@
+#In this SQL, I am creating a table for a candy shop, I included several columns such as id, name, price, quanity, amount sold, main ingredient and vegan. 
+
+CREATE TABLE Candy_shop (id integer primary key, name text, price integer, quanity integer, sold integer, ingredient text, vegan text );
+
+# Next, I inserted 5 values of for the Candy Shop database. 
+
+INSERT INTO Candy_shop VALUES 
+(1, "HERSHEY",2, 62, 31, "chocolate", "yes"),
+(2, "Gummy Worms",5,87,12,"Fruity", "yes"),
+(3, "Nerds",9, 65, 64,"Fruity","no"),
+(4, "Candy Cane",4, 12, 1, "Mint", "yes"),
+(5, "Reeses",3, 23, 12, "Chocolate", "no");
+
+# Here I am wanting to understand which candies sold more than 20 pieces, I ordered it by price. Then I wanted the told amount of sold for all candies in store. 
+
+SELECT name,sold FROM Candy_shop WHERE sold > 20 
+ORDER BY price;
+SELECT SUM(sold) FROM Candy_shop;
