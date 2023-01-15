@@ -1,0 +1,42 @@
+# I created a table from scratch based on famous women in music today, I used the join clause to bring both tables of basic information and personal informationn together. 
+CREATE TABLE singers (
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    age INTEGER,
+    year INTEGER,
+    hometown TEXT,
+    fame_song TEXT,
+    genre TEXT );
+    
+INSERT INTO singers VALUES ( 
+    1,"Kehlani", 27, 2011, "Oakland, Californa","Nights Like This", "R&B");
+INSERT INTO singers VALUES (
+    2, "Jhene Aiko", 34, 2013, "Los Angeles,California", "The Worst", "R&B");
+INSERT INTO singers VALUES (
+    3, "P!NK", 40, 2000, "Daylestown, Pennsylvania", "Just give me a reason", "Rock");
+INSERT INTO singers VALUES (
+    4, "Beyonce", 39, 1997, "Houston, Texas", "Single Ladies", "R&B");
+INSERT INTO singers VALUES ( 
+    5, "Madonna", 62, 1983, "Bay City, Michigan", "Like A Virgin", "Pop");
+    
+CREATE TABLE fun_facts (
+    id INTEGER PRIMARY KEY,
+    sign TEXT, 
+    hobbies TEXT,
+    married TEXT );
+    
+INSERT INTO fun_facts VALUES (
+    1, "Taurus", "surfing", "no");
+INSERT INTO fun_facts VALUES ( 
+    2, "Pisces", "meditating", "no");
+INSERT INTO fun_facts VALUES (
+    3, "Virgo", "Gardening", "yes"); 
+INSERT INTO fun_facts VALUES (
+    4, "Virgo", "Beekeeping", "yes");
+INSERT INTO fun_facts VALUES (
+    5, "Leo", "Art Collection", "no"); 
+    
+SELECT singers.id, name, age, year, hometown, fame_song,sign, hobbies, married
+FROM singers
+LEFT OUTER JOIN fun_facts
+ON singers.id = fun_facts.id 
